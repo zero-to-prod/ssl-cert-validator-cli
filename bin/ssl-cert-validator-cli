@@ -10,12 +10,12 @@ use Zerotoprod\SslCertValidatorCli\ValidateHostCommand;
 
 require getcwd().'/vendor/autoload.php';
 
-$application = (new Application());
+$Application = (new Application());
 
-$application->add(new GetCertCommand());
-$application->add(new SelfSignedCertCommand());
-$application->add(new SrcCommand());
-$application->add(new ValidateCertCommand());
-$application->add(new ValidateHostCommand());
+$Application->add(new GetCertCommand());
+$Application->add(new SelfSignedCertCommand());
+$Application->add(new SrcCommand());
+$Application->add(new ValidateCertCommand());
+$Application->add(new ValidateHostCommand());
 
-$application->run();
+$Application->run();

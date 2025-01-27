@@ -12,7 +12,7 @@ use Zerotoprod\SslCertValidator\SslCertificate;
 
 #[AsCommand(
     name: 'ssl-cert-validator-cli:validate-host',
-    description: 'Determines if an SSL certificate is valid for a given hostname.'
+    description: 'Determines if a hostname is valid. Returns `valid` or `invalid`.'
 )]
 class ValidateHostCommand extends Command
 {

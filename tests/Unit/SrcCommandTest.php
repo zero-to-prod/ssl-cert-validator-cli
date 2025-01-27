@@ -12,13 +12,13 @@ class SrcCommandTest extends TestCase
 {
     #[Test] public function command(): void
     {
-        $application = new Application();
-        $application->add(new SrcCommand());
+        $Application = new Application();
+        $Application->add(new SrcCommand());
 
-        $command = $application->find('ssl-cert-validator-cli:src');
-        $commandTester = new CommandTester($command);
-        $commandTester->execute([]);
+        $Command = $Application->find('ssl-cert-validator-cli:src');
+        $CommandTester = new CommandTester($Command);
+        $CommandTester->execute([]);
 
-        $commandTester->assertCommandIsSuccessful();
+        $CommandTester->assertCommandIsSuccessful();
     }
 }

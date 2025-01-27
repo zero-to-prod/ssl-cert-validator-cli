@@ -12,7 +12,7 @@ use Zerotoprod\SslCertValidator\SslCertificate;
 
 #[AsCommand(
     name: 'ssl-cert-validator-cli:self-signed-cert',
-    description: 'Determines if an SSL certificate is valid for a given hostname.'
+    description: 'Determines if cer is self-signed for a given hostname. Returns `true` or `false`.'
 )]
 class SelfSignedCertCommand extends Command
 {

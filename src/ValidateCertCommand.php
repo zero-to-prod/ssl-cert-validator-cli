@@ -11,7 +11,7 @@ use Zerotoprod\SslCertValidator\SslCertificate;
 
 #[AsCommand(
     name: 'ssl-cert-validator-cli:validate-cert',
-    description: 'Determines if an SSL certificate is valid for a given hostname.'
+    description: 'Determines if cert is valid. Returns `valid` or `invalid`.'
 )]
 class ValidateCertCommand extends Command
 {
@@ -20,7 +20,7 @@ class ValidateCertCommand extends Command
     {
         $output->writeln(
             SslCertificate::from($input->getArgument('hostname'))
-                ->isValid() ? 'Valid' : 'Invalid'
+                ->isValid() ? 'valid' : 'invalid'
         );
 
         return Command::SUCCESS;

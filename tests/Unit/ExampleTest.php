@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\:package_namespace\ExampleCommand;
+use Zerotoprod\SslCertValidatorCli\ExampleCommand;
 
 class ExampleTest extends TestCase
 {

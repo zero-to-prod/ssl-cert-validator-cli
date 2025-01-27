@@ -1,29 +1,31 @@
 <?php
 
-namespace Zerotoprod\:package_namespace;
+namespace Zerotoprod\SslCertValidatorCli;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
+use Zerotoprod\SslCertValidator\SslCertificate;
 
 #[AsCommand(
-    name: 'example',
-    description: 'description'
+    name: 'ssl-cert-validator-cli:get-cert',
+    description: 'Get SSL certificate for a given hostname.'
 )]
-class :package_namespace extends Command
+class GetCertCommand extends Command
 {
-
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $output->writeln(
+            json_encode(SslCertificate::from($input->getArgument('hostname')), JSON_PRETTY_PRINT)
+        );
+
         return Command::SUCCESS;
     }
 
     protected function configure(): void
     {
-        $this->addArgument('arg1', InputArgument::REQUIRED, 'description.');
-        $this->addOption('option1', mode: InputOption::VALUE_OPTIONAL, description: 'description');
+        $this->addArgument('hostname', InputArgument::REQUIRED, 'Hostname');
     }
 }

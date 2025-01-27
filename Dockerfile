@@ -15,7 +15,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- \
 
 RUN composer install
 
-RUN chmod +x /app/bin/:package_slug
+RUN chmod +x /app/bin/ssl-cert-validator-cli
 
 FROM php:8.2-cli
 
@@ -23,4 +23,4 @@ WORKDIR /app
 
 COPY --from=builder /app /app
 
-ENTRYPOINT ["php", "bin/:package_slug", "--ansi"]
+ENTRYPOINT ["php", "bin/ssl-cert-validator-cli", "--ansi"]

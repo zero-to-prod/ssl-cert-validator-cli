@@ -4,6 +4,7 @@
 
 [![Repo](https://img.shields.io/badge/github-gray?logo=github)](https://github.com/zero-to-prod/ssl-cert-validator-cli)
 [![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/ssl-cert-validator-cli/test.yml?label=test)](https://github.com/zero-to-prod/ssl-cert-validator-cli/actions)
+[![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/zero-to-prod/ssl-cert-validator-cli/build_docker_image.yml?label=build_docker_image)](https://github.com/zero-to-prod/ssl-cert-validator-cli/actions)
 [![Packagist Downloads](https://img.shields.io/packagist/dt/zero-to-prod/ssl-cert-validator-cli?color=blue)](https://packagist.org/packages/zero-to-prod/ssl-cert-validator-cli/stats)
 [![php](https://img.shields.io/packagist/php-v/zero-to-prod/ssl-cert-validator-cli.svg?color=purple)](https://packagist.org/packages/zero-to-prod/ssl-cert-validator-cli/stats)
 [![Packagist Version](https://img.shields.io/packagist/v/zero-to-prod/ssl-cert-validator-cli?color=f28d1a)](https://packagist.org/packages/zero-to-prod/ssl-cert-validator-cli)
@@ -40,10 +41,10 @@ This will add the package to your project’s dependencies and create an autoloa
 
 ## Usage
 
-Run the cli:
+Run this command to see the available commands:
 
 ```shell
-vendor/bin/ssl-cert-validator-cli
+vendor/bin/ssl-cert-validator-cli list
 ```
 
 ## Docker Image

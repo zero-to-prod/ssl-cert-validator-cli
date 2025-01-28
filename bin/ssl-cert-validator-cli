@@ -2,20 +2,12 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Zerotoprod\SslCertValidatorCli\GetCertCommand;
-use Zerotoprod\SslCertValidatorCli\SelfSignedCertCommand;
-use Zerotoprod\SslCertValidatorCli\SrcCommand;
-use Zerotoprod\SslCertValidatorCli\ValidateCertCommand;
-use Zerotoprod\SslCertValidatorCli\ValidateHostCommand;
+use Zerotoprod\SslCertValidatorCli\SslCertValidatorCli;
 
 require getcwd().'/vendor/autoload.php';
 
 $Application = (new Application());
 
-$Application->add(new GetCertCommand());
-$Application->add(new SelfSignedCertCommand());
-$Application->add(new SrcCommand());
-$Application->add(new ValidateCertCommand());
-$Application->add(new ValidateHostCommand());
+SslCertValidatorCli::register($Application);
 
 $Application->run();

@@ -6,8 +6,8 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\SslCertValidatorCli\selfSignedCert\selfSignedCertArguments;
-use Zerotoprod\SslCertValidatorCli\selfSignedCert\selfSignedCertCommand;
+use Zerotoprod\SslCertValidatorCli\SelfSignedCert\SelfSignedCertArguments;
+use Zerotoprod\SslCertValidatorCli\SelfSignedCert\SelfSignedCertCommand;
 
 class SelfSignedCertCommandTest extends TestCase
 {

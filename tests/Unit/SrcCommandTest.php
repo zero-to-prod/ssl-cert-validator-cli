@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\SslCertValidatorCli\SrcCommand;
+use Zerotoprod\SslCertValidatorCli\Src\SrcCommand;
 
 class SrcCommandTest extends TestCase
 {
@@ -15,7 +15,7 @@ class SrcCommandTest extends TestCase
         $Application = new Application();
         $Application->add(new SrcCommand());
 
-        $Command = $Application->find('ssl-cert-validator-cli:src');
+        $Command = $Application->find(SrcCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([]);
 

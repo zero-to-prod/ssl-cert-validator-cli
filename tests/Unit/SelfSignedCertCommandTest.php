@@ -19,7 +19,7 @@ class SelfSignedCertCommandTest extends TestCase
         $Command = $Application->find(selfSignedCertCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([
-            selfSignedCertArguments::hostname => selfSignedCertArguments::hostname
+            selfSignedCertArguments::hostname => SelfSignedCertArguments::hostname
         ]);
 
         $CommandTester->assertCommandIsSuccessful();

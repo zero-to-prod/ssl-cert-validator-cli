@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\SslCertValidatorCli;
+namespace Zerotoprod\SslCertValidatorCli\ValidateHost;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
@@ -9,23 +9,27 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 use Zerotoprod\SslCertValidator\SslCertificate;
+use Zerotoprod\SslCertValidatorCli\ValidateCert\ValidateCertArguments;
 
 #[AsCommand(
-    name: 'ssl-cert-validator-cli:self-signed-cert',
-    description: 'Determines if cer is self-signed for a given hostname. Returns `true` or `false`.'
+    name: ValidateHostCommand::signature,
+    description: 'Determines if a hostname is valid. Returns hostname if true, null otherwise.'
 )]
-class SelfSignedCertCommand extends Command
+class ValidateHostCommand extends Command
 {
+    public const signature = 'ssl-cert-validator-cli:validate-host';
 
     /**
      * @throws Throwable
      */
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $Args = ValidateCertArguments::from($input->getArguments());
+
         $output->writeln(
-            SslCertificate::isSelfSigned($input->getArgument('hostname'))
-                ? 'true'
-                : 'false'
+            SslCertificate::hostIsValid($Args->hostname)
+                ? $Args->hostname
+                : ''
         );
 
         return Command::SUCCESS;

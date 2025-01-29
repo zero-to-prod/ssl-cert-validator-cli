@@ -3,6 +3,11 @@
 namespace Zerotoprod\SslCertValidatorCli;
 
 use Symfony\Component\Console\Application;
+use Zerotoprod\SslCertValidatorCli\GetCert\GetCertCommand;
+use Zerotoprod\SslCertValidatorCli\SelfSignedCert\SelfSignedCertCommand;
+use Zerotoprod\SslCertValidatorCli\Src\SrcCommand;
+use Zerotoprod\SslCertValidatorCli\ValidateCert\ValidateCertCommand;
+use Zerotoprod\SslCertValidatorCli\ValidateHost\ValidateHostCommand;
 
 class SslCertValidatorCli
 {

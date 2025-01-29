@@ -14,12 +14,12 @@ class SelfSignedCertCommandTest extends TestCase
     #[Test] public function command(): void
     {
         $Application = new Application();
-        $Application->add(new selfSignedCertCommand());
+        $Application->add(new SelfSignedCertCommand());
 
-        $Command = $Application->find(selfSignedCertCommand::signature);
+        $Command = $Application->find(SelfSignedCertCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([
-            selfSignedCertArguments::hostname => SelfSignedCertArguments::hostname
+            SelfSignedCertArguments::hostname => SelfSignedCertArguments::hostname
         ]);
 
         $CommandTester->assertCommandIsSuccessful();

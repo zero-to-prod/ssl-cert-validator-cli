@@ -44,8 +44,6 @@ jobs:
           tags: |
             davidsmith3/ssl-cert-validator-cli:latest
             davidsmith3/ssl-cert-validator-cli:${{ env.VERSION }}
-          cache-from: type=registry,ref=davidsmith3/ssl-cert-validator-cli:buildcache
-          cache-to: type=registry,ref=davidsmith3/ssl-cert-validator-cli:buildcache,mode=max
           build-args: |
             NODE_ENV=production
           labels: |

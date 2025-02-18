@@ -9,12 +9,18 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\SslCertValidator\SslCertificate;
 
+/**
+ * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+ */
 #[AsCommand(
     name: GetCertCommand::signature,
     description: 'Get SSL certificate for a given hostname.'
 )]
 class GetCertCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+     */
     public const signature = 'ssl-cert-validator-cli:get-cert';
 
     protected function execute(InputInterface $input, OutputInterface $output): int

@@ -10,12 +10,18 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Throwable;
 use Zerotoprod\SslCertValidator\SslCertificate;
 
+/**
+ * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+ */
 #[AsCommand(
     name: SelfSignedCertCommand::signature,
     description: 'Determines if cer is self-signed for a given hostname.  Returns hostname if true, null otherwise.'
 )]
 class SelfSignedCertCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+     */
     public const signature = 'ssl-cert-validator-cli:self-signed-cert';
 
     /**

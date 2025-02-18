@@ -11,12 +11,18 @@ use Throwable;
 use Zerotoprod\SslCertValidator\SslCertificate;
 use Zerotoprod\SslCertValidatorCli\ValidateCert\ValidateCertArguments;
 
+/**
+ * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+ */
 #[AsCommand(
     name: ValidateHostCommand::signature,
     description: 'Determines if a hostname is valid. Returns hostname if true, null otherwise.'
 )]
 class ValidateHostCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/ssl-cert-validator-cli
+     */
     public const signature = 'ssl-cert-validator-cli:validate-host';
 
     /**

@@ -1,6 +1,6 @@
 {
   "name": "zero-to-prod/ssl-cert-validator-cli",
-  "description": "ssl-cert-validator-cli",
+  "description": "A cli for validating ssl certificates.",
   "license": "MIT",
   "type": "library",
   "keywords": [

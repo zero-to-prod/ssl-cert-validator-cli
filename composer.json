@@ -45,7 +45,8 @@
     }
   },
   "bin": [
-    "bin/ssl-cert-validator-cli"
+    "bin/ssl-cert-validator-cli",
+    "bin/zero-to-prod-ssl-cert-validator-cli"
   ],
   "require-dev": {
     "phpunit/phpunit": "<12.0"
